@@ -1,7 +1,7 @@
 # Project Auros
 Kurt Le, Marli Cohen, Gabriela Clemente 
 
-##Introduction
+## Introduction
 Project Auros is a wearable emergency alert system designed to be embedded within a piece of jewelry. The goal of the system is to enable users to send an SOS message or transmit their live location to a designated receiver through WiFi. The receiver displays the transmitted information and can send a confirmation signal back to the wearable device. This confirmation is communicated to the user through a vibration, providing reassurance that their message has been received. 
 
 This project was developed as part of an Embedded Systems course and reflects our learning goals in integrating microcontrollers, wireless communication, sensors, and user-centered hardware design. Our initial motivation stemmed from the desire to design a safety tool primarily aimed at vulnerable populations, including women walking alone. Over time, the project evolved into a general emergency communication device suitable for anyone who needs to rapidly call for help without needing to reach for a phone.
@@ -9,13 +9,13 @@ This project was developed as part of an Embedded Systems course and reflects ou
 Throughout the design phase, we consulted documentations as well as tutorials from Adafruit(ESP32 Feather, GPS FeatherWing, Joy FeatherWing, and OLED FeatherWing), Mosquitto MQTT documentation, and user centered accessibility frameworks such as the Web Accessibility Initiative and Usability.gov  guidelines. 
 
 
-##Methods 
-###System Overview:
+## Methods 
+### System Overview:
 Project Auros consists of two microcontroller based devices, the transmitter and the receiver. 
-###Transmitter:
+### Transmitter:
 The transmitter contains one button for user interaction, which is used to send out the SOS signal. This signal is then sent to the receiver via the MQTT channel. The transmitter also has a GPS system which obtains the user’s location and sends it to the receiver every two seconds through MQTT. Additionally, the transmitter is equipped with a vibrating motor, which will be used to provide confirmation feedback. Ideally, the transmitter would be wearable–embedded within jewelry casing or used as a small keychain.
 
-###Receiver:
+### Receiver:
 The receiver will be continuously polling the Mosquitto channel for new messages and updates from the transmitter. In addition, The receiver device is equipped with buttons to send out a “read” signal to the transmitter as confirmation.  Once a message has been received, the receiver will display the message on the display board (OLED FeatherWing).
 
 Both of the devices include an ESP32 microcontroller and are intended to operate off battery power for portability and independence. 
